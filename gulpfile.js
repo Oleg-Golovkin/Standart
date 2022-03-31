@@ -15,7 +15,13 @@ const path = require('path');
 // плагин webpack, минимизирующий js
 const CompressionPlugin = require("compression-webpack-plugin");
 
-
+// Не обязательный блок.
+// Можно создать переменную пути и подставить ее там, где нужно
+// в таком формате pipe(gulp.dest(dist + "assets"))
+// Чтобы перемещать конечный продукт в иные папки
+// const dist = './dist/';
+// const dist = 'C:/MAMP/htdocs/';
+// const dist = '/Applications/MAMP/htdocs/';
 
 
 //1. Настраиваем обновление страницы
