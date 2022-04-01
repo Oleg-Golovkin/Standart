@@ -19,7 +19,7 @@ const CompressionPlugin = require("compression-webpack-plugin");
 // Можно создать переменную пути и подставить ее там, где нужно
 // в таком формате pipe(gulp.dest(dist + "assets"))
 // Чтобы перемещать конечный продукт в иные папки
-// const dist = './dist/';
+const dist = './dist/';
 // const dist = 'C:/MAMP/htdocs/';
 // const dist = '/Applications/MAMP/htdocs/';
 
@@ -30,7 +30,7 @@ gulp.task('server', function () {
     //Его используем как имя задачи
     browserSync.init({
         server: {
-            baseDir: "dist"
+            baseDir: dist
             //меняем путь к корневой папке. Чтобы 
             // все шло в чистовую папку dist 
         }
@@ -66,7 +66,7 @@ gulp.task('styles', function () {
         .pipe(cleanCSS({
             compatibility: 'ie8'
         })) //сжимаем файл css
-        .pipe(gulp.dest('dist/css')) /* без точек с запятой */
+        .pipe(gulp.dest(dist +'css')) /* без точек с запятой */
         // Теперь файл css помещаем в папку в чистовую папку dist
         .pipe(browserSync.stream()); /* точка с запятой */
     // После компиляции кода - обновление страницы
@@ -106,7 +106,7 @@ gulp.task('html', function () {
             collapseWhitespace: true
         }))
         // сжимаем файл html
-        .pipe(gulp.dest('dist/'));
+        .pipe(gulp.dest(dist));
     // КОПИРУЕМ сжатый файл  html в папку dist
     // поставить знак /  , чтобы помещалось в папку
 
@@ -117,7 +117,7 @@ gulp.task('html', function () {
 // Копирование шрифтов по аналогии
 gulp.task('fonts', function () {
     return gulp.src('src/fonts/**/*')
-        .pipe(gulp.dest('dist/fonts'))
+        .pipe(gulp.dest(dist +'fonts'))
         .pipe(browserSync.stream());
     // обновление страницы, чтобы после изменения
     // файла скрипта не нужно было самому обновлять
@@ -127,7 +127,7 @@ gulp.task('fonts', function () {
 gulp.task('icons', function () {
     return gulp.src('src/icons/**/*')
         .pipe(imagemin())
-        .pipe(gulp.dest('dist/icons'))
+        .pipe(gulp.dest(dist +'icons'))
         .pipe(browserSync.stream());
     // обновление страницы, чтобы после изменения
     // файла скрипта не нужно было самому обновлять
@@ -138,7 +138,7 @@ gulp.task('icons', function () {
 gulp.task('image', function () {
     return gulp.src('src/img/**/*')
         .pipe(imagemin())
-        .pipe(gulp.dest('dist/img/'))
+        .pipe(gulp.dest(dist + 'img/'))
         .pipe(browserSync.stream());
     // обновление страницы, чтобы после изменения
     // файла скрипта не нужно было самому обновлять
@@ -172,7 +172,7 @@ gulp.task('webpack', function () {
                 mode: 'production',
                 entry: '/src/js/script.js',
                 output: {
-                    path: path.resolve(__dirname, 'dist'),
+                    path: path.resolve(__dirname, dist),
                     filename: 'js/bundle.js',
                 },
                 watch: true,
@@ -207,7 +207,7 @@ gulp.task('webpack', function () {
                     }]
                 }
             }))
-        .pipe(gulp.dest('dist/'))
+        .pipe(gulp.dest(dist))
         .pipe(browserSync.stream());
 });
 
