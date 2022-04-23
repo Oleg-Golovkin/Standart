@@ -1,0 +1,225 @@
+{
+	// Place your GLOBAL snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+	// Placeholders with the same ids are connected.
+	// Example:
+
+	//--------------------------------------JS----------------------------//
+	"console.log": {
+		"scope": "javascript,typescript",
+		"prefix": "cl",
+		"body": [
+			"console.log($1)",
+		],
+		"description": "Log output to console"
+	},
+	"Обработчик событий": {
+		"scope": "javascript,typescript",
+		"prefix": ".add",
+		"body": [
+			".addEventListener('$1click', ($2) => {$3});",
+		],
+		"description": "Log output to console"
+	},
+	"document.add": {
+		"scope": "javascript,typescript",
+		"prefix": "dadd",
+		"body": [
+			"document.addEventListener('DOMContentLoaded', () => {$1});",
+		],
+		"description": "Log output to console"
+	},
+	"forEach": {
+		"scope": "javascript,typescript",
+		"prefix": ".for",
+		"body": [
+			".forEach(($1item, $2i) => {$3item$4});",
+		],
+		"description": "Log output to console"
+	},
+	"document.querySelectorAll": {
+		"scope": "javascript,typescript",
+		"prefix": "dqsa",
+		"body": [
+			"document.querySelectorAll('$1');",
+		],
+		"description": "Log output to console"
+	},
+	"document.querySelector": {
+		"scope": "javascript,typescript",
+		"prefix": "dqs",
+		"body": [
+			"document.querySelector('$1');",
+		],
+		"description": "Log output to console"
+	},
+	"const": {
+		"scope": "javascript,typescript",
+		"prefix": "con",
+		"body": [
+			"const $1item = $2;",
+		],
+		"description": "Log output to console"
+	},
+	"const()": {
+		"scope": "javascript,typescript",
+		"prefix": "con()",
+		"body": [
+			"const $1item = ($2) => {$3};",
+		],
+		"description": "Log output to console"
+	},
+	"let": {
+		"scope": "javascript,typescript",
+		"prefix": "let",
+		"body": [
+			"let $1item = $2;",
+		],
+		"description": "Log output to console"
+	},
+	"else": {
+		"scope": "javascript,typescript",
+		"prefix": "el",
+		"body": [
+			"else {$1}",
+		],
+		"description": "Log output to console"
+	},
+	"else if": {
+		"scope": "javascript,typescript",
+		"prefix": "elif",
+		"body": [
+			"else if($1) {$2}",
+		],
+		"description": "Log output to console"
+	},
+	"if(e.target &&)": {
+		"scope": "javascript,typescript",
+		"prefix": "ifet",
+		"body": [
+			"if($1e.target $2&& $3) {$4}",
+		],
+		"description": "Log output to console"
+	},
+	"classList.add": {
+		"scope": "javascript,typescript",
+		"prefix": ".cladd",
+		"body": [
+			".classList.add('$1');",
+		],
+		"description": "Log output to console"
+	},
+	"classList.remove": {
+		"scope": "javascript,typescript",
+		"prefix": ".clr",
+		"body": [
+			".classList.remove('$1');",
+		],
+		"description": "Log output to console"
+	},
+	"classList.target": {
+		"scope": "javascript,typescript",
+		"prefix": ".clt",
+		"body": [
+			".classList.target('$1');",
+		],
+		"description": "Log output to console"
+	},
+
+	//--------------------------------------SASS----------------------------//
+	"margin": {
+		"scope": "sass",
+		"prefix": "marg",
+		"body": [
+			"margin: 0$1px 0$2px 0$3px 0$4px",
+		],
+		"description": "Log output to console"
+	},
+	"padding": {
+		"scope": "sass",
+		"prefix": "padd",
+		"body": [
+			"padding: 0$1px 0$2px 0$3px 0$4px",
+		],
+		"description": "Log output to console"
+	},
+
+	"Псевдоэлемент": {
+		"scope": "sass",
+		"prefix": "cont",
+		"body": [
+			"content: ''",
+			"position: $1absolute",
+			"width: $2auto",
+			"height: $3auto",
+			"right: $4auto",
+			"bottom: $5auto",
+			"top: $6auto",
+		],
+		"description": "Log output to console"
+	},
+	"background": {
+		"scope": "sass",
+		"prefix": "bac",
+		"body": [
+			"background: 'url('$1../$2') $3center $4center/$5cover $6no-repeat'",			
+		],
+		"description": "Log output to console"
+	},
+	"transform:translate": {
+		"scope": "sass",
+		"prefix": "trtr",
+		"body": [
+			"transform: translate(0$1px, 0$2px)",			
+		],
+		"description": "Log output to console"
+	},
+	"border-bottom": {
+		"scope": "sass",
+		"prefix": "bobo",
+		"body": [
+			"border-bottom: $1px $2solid $3white",			
+		],
+		"description": "Log output to console"
+	},
+	"media-max-width-576": {
+		"scope": "sass",
+		"prefix": "@me576",
+		"body": [
+			"@media ($1max-width: 576$2px)",			
+			"	$3",			
+		],
+		"description": "Log output to console"
+	},
+	"media-max-width-767": {
+		"scope": "sass",
+		"prefix": "@me767",
+		"body": [
+			"@media ($1max-width: 767$2px)",
+			"	$3",			
+		],
+		"description": "Log output to console"
+	},
+	"media-max-width-992": {
+		"scope": "sass",
+		"prefix": "@me992",
+		"body": [
+			"@media ($1max-width: 992$2px)",
+			"	$3",			
+		],
+		"description": "Log output to console"
+	},
+	"media-max-width-1200px": {
+		"scope": "sass",
+		"prefix": "@me1200",
+		"body": [
+			"@media ($1max-width: 1200$2px)",
+			"	$3",			
+		],
+		"description": "Log output to console"
+	},
+
+}
